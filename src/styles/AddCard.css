@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    display: flex; /* Gör att hela body använder flexbox */
+    justify-content: center; /* Centrerar innehållet horisontellt */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    min-height: 100vh; /* Gör att body fyller hela höjden på skärmen */
+  }
+  
+.add-card-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar innehållet horisontellt */
+  justify-content: center; /* Centrerar innehållet vertikalt */
+  }
+  
+  .add-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .small-group {
+    width: 48%;
+  }
+  
+  input, select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  .submit-button {
+    padding: 12px;
+    background-color: #1a1f71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    
+  }
+  
+  .submit-button:hover {
+    background-color: #163f85;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+  
+  @media (min-width: 300px) {
+    .add-card-form {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .form-group {
+      width: 100%;
+    }
+  
+    .small-group {
+      width: 48%;
+    }
+  }
+  
