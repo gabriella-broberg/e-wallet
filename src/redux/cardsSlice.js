@@ -1,3 +1,4 @@
+// redux/cardsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -5,28 +6,30 @@ const initialState = {
 };
 
 const cardsSlice = createSlice({
-    name: 'cards',
-    initialState,
-    reducers: {
-      addCard: (state, action) => {
-        state.cards.push(action.payload);
-      },
-
+  name: 'cards',
+  initialState,
+  reducers: {
+    addCard: (state, action) => {
+      state.cards.push(action.payload);
+    },
+    updateCard: (state, action) => {
+      const index = state.cards.findIndex(card => card.id === action.payload.id);
+      if (index !== -1) {
+        state.cards[index] = action.payload; // Uppdatera kortet
+      }
+    },
+    deleteCard: (state, action) => {
+      state.cards = state.cards.filter(card => card.id !== action.payload);
+    },
     activateCard: (state, action) => {
-      // Se till att bara ett kort är aktivt
-      state.cards = state.cards.map((card) =>
+      state.cards = state.cards.map(card =>
         card.id === action.payload
           ? { ...card, isActive: true }
           : { ...card, isActive: false }
       );
     },
+  },
+});
 
-      deleteCard: (state, action) => {
-        state.cards = state.cards.filter(card => card.id !== action.payload);
-      },
-    },
-  });
-  
-  export const { addCard, activateCard, deleteCard } = cardsSlice.actions;
-  export default cardsSlice.reducer;
-  
+export const { addCard, updateCard, deleteCard, activateCard } = cardsSlice.actions;
+export default cardsSlice.reducer;

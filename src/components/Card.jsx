@@ -4,10 +4,13 @@ import visaLogo from '../assets/visa.svg';
 import mastercardLogo from '../assets/mastercard.svg';
 import amexLogo from '../assets/amex.svg';
 
-const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor, bank }) => {
+const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
   const maskedCardNumber = cardNumber
     ? '**** **** **** ' + cardNumber.slice(-4)
     : '**** **** **** ****';
+
+  // Dela upp validThru i månad och år
+  const [expireMonth, expireYear] = validThru ? validThru.split('/') : ['MM', 'YY'];
 
   // Dynamiska färger baserat på bank
   const bankStyles = {
@@ -37,7 +40,7 @@ const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor, bank })
         </div>
         <div>
           <p className="card-label">Expires</p>
-          <h3 className="card-expiry">{expireMonth || 'MM'}/{expireYear || 'YY'}</h3>
+          <h3 className="card-expiry">{expireMonth}/{expireYear}</h3> {/* Visa MM/YY */}
         </div>
       </div>
       <div className="card-bank">{bank || 'Unknown Bank'}</div>
@@ -48,8 +51,7 @@ const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor, bank })
 Card.propTypes = {
   cardNumber: PropTypes.string,
   cardHolder: PropTypes.string,
-  expireMonth: PropTypes.string,
-  expireYear: PropTypes.string,
+  validThru: PropTypes.string.isRequired, // Använd validThru här istället
   vendor: PropTypes.string.isRequired,
   bank: PropTypes.string.isRequired,
 };
