@@ -1,15 +1,4 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #333;
-    display: flex; /* Gör att hela body använder flexbox */
-    justify-content: center; /* Centrerar innehållet horisontellt */
-    align-items: center; /* Centrerar innehållet vertikalt */
-    min-height: 100vh; /* Gör att body fyller hela höjden på skärmen */
-  }
+
   
 .add-card-container {
     max-width: 400px;

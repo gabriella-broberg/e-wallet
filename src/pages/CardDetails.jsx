@@ -1,27 +1,39 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '../components/Card';
+import { activateCard, deleteCard } from '../redux/cardsSlice';
 
 const CardDetails = () => {
-  const { id } = useParams(); // Hämta kortets ID från URL
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const cards = useSelector((state) => state.cards.cards);
 
-  // Dummy-data för kort, du kan ersätta detta med data från Redux eller en databas
-  const card = {
-    id: id,
-    cardNumber: '4539 031X XXXX 5926',
-    cardHolder: 'John Doe',
-    expireMonth: '09',
-    expireYear: '27',
-    vendor: 'visa',
-    isActive: false, // Visa om kortet är aktivt eller inte
+  // Hitta kortet baserat på ID
+  const card = cards.find((card) => card.id === id);
+
+  if (!card) {
+    return <p>Card not found</p>;
+  }
+
+  const handleActivate = () => {
+    dispatch(activateCard(id));
+    navigate('/'); // Gå tillbaka till startsidan efter att kortet har aktiverats
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteCard(id));
+    navigate('/');
   };
 
   return (
     <div>
+        
       <h1>Card Details</h1>
+      <button disabled={card.isActive} onClick={handleActivate}>Activate Card</button>
+      <button disabled={card.isActive} onClick={handleDelete}>Delete Card</button>
       <Card {...card} />
-      <button disabled={card.isActive}>Activate Card</button>
-      <button disabled={card.isActive}>Edit Card</button>
-      <button disabled={card.isActive}>Delete Card</button>
+  
     </div>
   );
 };

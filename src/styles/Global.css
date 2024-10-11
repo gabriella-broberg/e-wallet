@@ -1,0 +1,77 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    max-width: 100%; /* Sätt till 100% för att ta upp hela skärmens bredd */
+    margin: 0; /* Tar bort marginalerna */
+    padding: 0;
+    display: flex; 
+    justify-content: center; /* Centrerar horisontellt */
+    align-items: center; /* Centrerar vertikalt */
+    min-height: 100vh; /* Full höjd på skärmen */
+    flex-direction: column; /* För att centrera innehåll i en kolumn */
+}
+
+
+
+.home-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar innehållet horisontellt */
+  justify-content: center; /* Centrerar innehållet vertikalt */
+}
+
+
+
+.add-card-button {
+    padding: 12px;
+    background-color: #1a1f71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: center; 
+}
+
+.add-card-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Global styling för appen */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Gör att containern alltid täcker hela höjden på skärmen */
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Så att headern alltid syns ovanpå innehållet */
+  }
+  
+  main {
+    flex-grow: 1; /* Låter innehållet i main fylla upp allt utrymme */
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  

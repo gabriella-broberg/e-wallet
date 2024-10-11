@@ -1,14 +1,34 @@
 import PropTypes from 'prop-types';
 import '../styles/Card.css'; // Importera CSS-fil för styling
+import visaLogo from '../assets/visa.svg';
+import mastercardLogo from '../assets/mastercard.svg';
+import amexLogo from '../assets/amex.svg';
 
-const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor }) => {
-  // Visa endast de 4 sista siffrorna i kortnumret
+const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor, bank }) => {
   const maskedCardNumber = cardNumber
-    ? '**** **** **** ' + cardNumber.slice(-4)  // Tar de sista 4 siffrorna
+    ? '**** **** **** ' + cardNumber.slice(-4)
     : '**** **** **** ****';
 
+  // Dynamiska färger baserat på bank
+  const bankStyles = {
+    "ICA Banken": { backgroundColor: 'red' },
+    Nordea: { backgroundColor: '#0057b5' },
+    Handelsbanken: { backgroundColor: '#006aa7' },
+    Swedbank: { backgroundColor: '#f15a22' }
+  };
+
+  // Logotyper för vendor
+  const vendorLogos = {
+    visa: visaLogo,           // Importerad SVG
+    mastercard: mastercardLogo, // Importerad SVG
+    amex: amexLogo            // Importerad SVG
+  };
+
   return (
-    <div className={`card-container ${vendor}`}>
+    <div className="card-container" style={bankStyles[bank] || { backgroundColor: '#1c1f71' }}>
+      <div className="card-logo">
+        <img src={vendorLogos[vendor]} alt={`${vendor} logo`} className="vendor-logo" />
+      </div>
       <h2 className="card-number">{maskedCardNumber}</h2>
       <div className="card-info">
         <div>
@@ -20,7 +40,7 @@ const Card = ({ cardNumber, cardHolder, expireMonth, expireYear, vendor }) => {
           <h3 className="card-expiry">{expireMonth || 'MM'}/{expireYear || 'YY'}</h3>
         </div>
       </div>
-      <div className="card-vendor">{vendor || 'VISA'}</div>
+      <div className="card-bank">{bank || 'Unknown Bank'}</div>
     </div>
   );
 };
@@ -31,6 +51,7 @@ Card.propTypes = {
   expireMonth: PropTypes.string,
   expireYear: PropTypes.string,
   vendor: PropTypes.string.isRequired,
+  bank: PropTypes.string.isRequired,
 };
 
 export default Card;
