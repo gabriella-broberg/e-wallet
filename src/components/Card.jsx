@@ -36,7 +36,7 @@ const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
       <div className="card-info">
         <div>
           <p className="card-label">Cardholder</p>
-          <h3 className="card-holder">{cardHolder || 'John Doe'}</h3>
+          <h3 className="card-holder">{cardHolder || 'Name'}</h3>
         </div>
         <div>
           <p className="card-label">Expires</p>
@@ -51,7 +51,7 @@ const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
 Card.propTypes = {
   cardNumber: PropTypes.string,
   cardHolder: PropTypes.string,
-  validThru: PropTypes.string.isRequired, // Använd validThru här istället
+  validThru: PropTypes.string.isRequired, 
   vendor: PropTypes.string.isRequired,
   bank: PropTypes.string.isRequired,
 };

@@ -142,7 +142,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             name="cardHolder"
             value={cardDetails.cardHolder}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder="Name Lastname"
             required
           />
           {errors.cardHolder && <p className="error-message">{errors.cardHolder}</p>}

@@ -1,9 +1,22 @@
-// redux/cardsSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const initialState = {
-  cards: [],
+  cards: [
+    {
+      id: '1',
+      cardNumber: '1234 5678 9123 4567',
+      cardHolder: 'John Doe',
+      validThru: '12/25',
+      vendor: 'visa',
+      bank: 'Swedbank',
+      isActive: true,
+    },
+    
+  ],
 };
+
 
 const cardsSlice = createSlice({
   name: 'cards',
