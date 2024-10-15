@@ -13,7 +13,7 @@ const Header = () => {
 
           <li>
             <Link to="/info">
-              <FaInfoCircle size={32} /> 
+              <FaInfoCircle size={24} /> 
             </Link>
           </li>
         </ul>
