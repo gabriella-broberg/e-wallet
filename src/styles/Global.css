@@ -18,7 +18,7 @@ body {
     display: flex; 
     justify-content: center; /* Centrerar horisontellt */
     align-items: center; /* Centrerar vertikalt */
-    min-height: 100vh; 
+    height: 100vh; 
     flex-direction: column; 
     overflow: hidden;
     
