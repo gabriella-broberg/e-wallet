@@ -31,7 +31,7 @@ const Settings = () => {
     <div className="settings-container">
       <h1>Settings</h1>
       <div>
-        <label>Choose Theme: </label>
+        <label>Theme: </label>
         <select value={theme} onChange={handleThemeChange}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>

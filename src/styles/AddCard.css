@@ -3,24 +3,28 @@
   
   .add-card-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 5px;
     padding: 15px;
     margin-bottom: 15;
     
   }
+
   
   .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   
+
   .small-group {
     width: 48%;
   }
   
   input, select {
-    padding: 8px;
+    padding: 4px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -131,26 +135,16 @@
 
 
 
-  /* CardDetails*/
 
 
 
+
+ 
+  
+
+
   
   
-  @media (min-width: 300px) {
-    .add-card-form {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  
-    .form-group {
-      width: 100%;
-    }
-  
-    .small-group {
-      width: 48%;
-    }
-  }
   
 
   
