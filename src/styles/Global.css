@@ -40,7 +40,7 @@ a {
   
 
   .home-container {
-    height: 75vh;
+    height: 71vh;
     max-width: 22rem;
     overflow-y: auto; 
     backdrop-filter: blur(10px);
@@ -53,7 +53,7 @@ a {
   }
 
     .card-details-container {
-    height: 75vh;
+    height: 71vh;
     overflow-y: auto; 
     backdrop-filter: blur(10px);
     margin: 0 auto;
@@ -66,7 +66,7 @@ a {
 
 
 .add-card-container {
-    height: 75vh;
+    height: 71vh;
     max-width: 22rem;
     overflow-y: auto;
     border-radius: 20px;
@@ -79,7 +79,7 @@ a {
 }
 
 .app-container {
-    max-height: 75vh;
+    max-height: 71vh;
     color: var(--text-color);
     max-width: 22rem;
     background-color: var(--background-color);
