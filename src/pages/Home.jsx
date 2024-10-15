@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h2>Your Cards</h2>
+      <h1>Your Cards</h1>
 
       {/* Visa ingen kort-meddelande om det inte finns några kort */}
       {cards.length === 0 ? (

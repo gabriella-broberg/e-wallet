@@ -12,14 +12,26 @@ const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
   // Dela upp validThru i månad och år
   const [expireMonth, expireYear] = validThru ? validThru.split('/') : ['MM', 'YY'];
 
-  // Dynamiska färger baserat på bank
-  const bankStyles = {
-    "ICA Banken": { backgroundColor: 'red' },
-    Nordea: { backgroundColor: '#7688b5' },
-    Handelsbanken: { backgroundColor: '#006aa7' },
-    Swedbank: { backgroundColor: '#f15a22' },
-    SEB: { backgroundColor: '#1c1f22' },
+// Dynamiska färger baserat på bank med mörkare blå toner för Handelsbanken och Nordea
+const bankStyles = {
+    "ICA Banken": {
+      backgroundImage: 'linear-gradient(135deg, #ff512f, #dd2476)', // Gradient från rött till mörkrött/rosa
+    },
+    Nordea: {
+      backgroundImage: 'linear-gradient(135deg, #27496d, #142850)', // Mörkblå gradient
+    },
+    Handelsbanken: {
+      backgroundImage: 'linear-gradient(135deg, #005c97, #00274d)', // Djupare blå toner
+    },
+    Swedbank: {
+      backgroundImage: 'linear-gradient(135deg, #f2994a, #f2c94c)', // Gradient från orange till guld
+    },
+    SEB: {
+      backgroundImage: 'linear-gradient(135deg, #434343, #000000)', // Gradient från mörkgrå till svart
+    },
   };
+  
+
 
   // Logotyper för vendor
   const vendorLogos = {
