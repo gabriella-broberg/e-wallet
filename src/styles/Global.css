@@ -79,7 +79,7 @@ a {
 }
 
 .app-container {
-    height: 75vh;
+    max-height: 75vh;
     color: var(--text-color);
     max-width: 22rem;
     background-color: var(--background-color);
