@@ -9,7 +9,6 @@
     bottom: 0;
     left: 50%; /* Centrerar menyn horisontellt */
     transform: translateX(-50%); /* Justerar för exakt mitten */
-    width: 90%; /* Menyn tar upp 80% av skärmens bredd */
     border-radius: 30px; /* Rundar hörnen för en mer modern känsla */
     border-top: 1px solid rgba(255, 255, 255, 0.3); /* Liten linje upptill */
     box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3); /* Större skugga för att ge djup */

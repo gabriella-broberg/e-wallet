@@ -105,8 +105,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
   };
 
   return (
-    <div className="add-card-container">
-      <h1>Edit Card</h1>
+    <div className="card-details-container">
 
       {/* Dynamisk förhandsvisning av kort */}
       <Card

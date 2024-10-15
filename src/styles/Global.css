@@ -32,10 +32,7 @@ a {
     --text-color: black;
   }
   
-  .app-container {
-    color: var(--text-color);
-
-  }
+ 
   
   button {
     background-color: var(--button-background);
@@ -43,17 +40,51 @@ a {
   
 
   .home-container {
-    background-color: var(--background-color);
-    max-width: 359px;
     height: 75vh;
+    max-width: 22rem;
     overflow-y: auto; 
     backdrop-filter: blur(10px);
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+    .card-details-container {
+    height: 75vh;
+    overflow-y: auto; 
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+.add-card-container {
+    height: 75vh;
+    max-width: 22rem;
+    overflow-y: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+
+.app-container {
+    height: 75vh;
+    color: var(--text-color);
+    max-width: 22rem;
+    background-color: var(--background-color);
+    border-radius: 20px;
+
   }
 
   .inactive-card {
@@ -93,7 +124,7 @@ a {
   }
   
   .settings-container h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     text-align: center;
     color: var(--text-color);
@@ -130,8 +161,7 @@ a {
   }
 
   
-  
-  
+ 
 
 
 
