@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Your Cards</h1>
+      <h2>Your Cards</h2>
 
       {/* Visa ingen kort-meddelande om det inte finns några kort */}
       {cards.length === 0 ? (
@@ -19,22 +19,25 @@ const Home = () => {
           {/* Visa aktiva kort om de finns */}
           {activeCard && (
             <div>
-              <h2>Active Card</h2>
+              <h3>Active Card</h3>
               <Card {...activeCard} />
             </div>
           )}
 
           {/* Visa inaktiva kort om de finns */}
           {inactiveCards.length > 0 && (
-            <div>
-              <h2>Inactive Cards</h2>
-              {inactiveCards.map(card => (
-                <Link key={card.id} to={`/card/${card.id}`}>
-                  <Card {...card} />
-                </Link>
-              ))}
-            </div>
-          )}
+  <div>
+    <h3 className="inactive-cards-title">Inactive Cards</h3> {/* Flyttad rubrik */}
+    <div className="inactive-cards-container">
+      {inactiveCards.map((card, index) => (
+        <Link key={card.id} to={`/card/${card.id}`} className="inactive-card" style={{ '--index': index }}>
+          <Card {...card} />
+        </Link>
+      ))}
+    </div>
+  </div>
+)}
+
         </div>
       )}
 

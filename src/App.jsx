@@ -4,21 +4,48 @@ import AddCard from './pages/AddCard';
 import CardDetails from './pages/CardDetails';
 import Settings from './pages/Settings';
 import Header from './components/Header';
-import './styles/Global.css'; 
-
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import './styles/Global.css';
+import BottomMenu from './components/BottomMenu';
 
 
 const App = () => {
+  const theme = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (theme === 'dark') {
+      root.style.setProperty('--background-color', 'rgba(51, 51, 51, 0.4)'); 
+      root.style.setProperty('--text-color', '#fff');
+      root.style.setProperty('--button-background', '#555');
+    } else if (theme === 'green') {
+      root.style.setProperty('--background-color', 'rgba(44, 95, 45, 0.4)'); 
+      root.style.setProperty('--text-color', '#fff');
+      root.style.setProperty('--button-background', '#3d9970');
+    } else {
+      root.style.setProperty('--background-color', 'rgba(244, 244, 249, 0.2)'); 
+      root.style.setProperty('--text-color', '#fff');
+      root.style.setProperty('--button-background', '#1a1f71');
+    }
+    
+  }, [theme]);
+
   return (
     <div className="app-container">
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/addcard" element={<AddCard />} />
-          <Route path="/card/:id" element={<CardDetails />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/addcard" element={<AddCard />} />
+            <Route path="/card/:id" element={<CardDetails />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+          <BottomMenu/>
+        </main>
+     
       </Router>
     </div>
   );

@@ -15,9 +15,10 @@ const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
   // Dynamiska färger baserat på bank
   const bankStyles = {
     "ICA Banken": { backgroundColor: 'red' },
-    Nordea: { backgroundColor: '#0057b5' },
+    Nordea: { backgroundColor: '#7688b5' },
     Handelsbanken: { backgroundColor: '#006aa7' },
-    Swedbank: { backgroundColor: '#f15a22' }
+    Swedbank: { backgroundColor: '#f15a22' },
+    SEB: { backgroundColor: '#1c1f22' },
   };
 
   // Logotyper för vendor
@@ -28,7 +29,7 @@ const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
   };
 
   return (
-    <div className="card-container" style={bankStyles[bank] || { backgroundColor: '#1c1f71' }}>
+    <div className="card-container" style={bankStyles[bank] || { backgroundColor: '#9688b5' }}>
       <div className="card-logo">
         <img src={vendorLogos[vendor]} alt={`${vendor} logo`} className="vendor-logo" />
       </div>

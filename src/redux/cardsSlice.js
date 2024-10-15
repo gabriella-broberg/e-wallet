@@ -10,7 +10,7 @@ const initialState = {
       cardHolder: 'John Doe',
       validThru: '12/25',
       vendor: 'visa',
-      bank: 'Swedbank',
+      bank: 'Nordea',
       isActive: true,
     },
     
@@ -19,30 +19,34 @@ const initialState = {
 
 
 const cardsSlice = createSlice({
-  name: 'cards',
-  initialState,
-  reducers: {
-    addCard: (state, action) => {
-      state.cards.push(action.payload);
-    },
-    updateCard: (state, action) => {
-      const index = state.cards.findIndex(card => card.id === action.payload.id);
-      if (index !== -1) {
-        state.cards[index] = action.payload; // Uppdatera kortet
+    name: 'cards',
+    initialState,
+    reducers: {
+      addCard: (state, action) => {
+        state.cards.push(action.payload);
+      },
+      updateCard: (state, action) => {
+        const index = state.cards.findIndex(card => card.id === action.payload.id);
+        if (index !== -1) {
+          state.cards[index] = action.payload; // Uppdatera kortet
+        }
+      },
+      deleteCard: (state, action) => {
+        state.cards = state.cards.filter(card => card.id !== action.payload);
+      },
+      activateCard: (state, action) => {
+        state.cards = state.cards.map(card =>
+          card.id === action.payload
+            ? { ...card, isActive: true }
+            : { ...card, isActive: false }
+        );
+      },
+      deleteAllInactiveCards: (state) => {
+        state.cards = state.cards.filter(card => card.isActive); // Radera alla inaktiva kort
       }
     },
-    deleteCard: (state, action) => {
-      state.cards = state.cards.filter(card => card.id !== action.payload);
-    },
-    activateCard: (state, action) => {
-      state.cards = state.cards.map(card =>
-        card.id === action.payload
-          ? { ...card, isActive: true }
-          : { ...card, isActive: false }
-      );
-    },
-  },
-});
-
-export const { addCard, updateCard, deleteCard, activateCard } = cardsSlice.actions;
-export default cardsSlice.reducer;
+  });
+  
+  export const { addCard, updateCard, deleteCard, activateCard, deleteAllInactiveCards } = cardsSlice.actions;
+  export default cardsSlice.reducer;
+  

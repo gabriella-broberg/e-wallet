@@ -106,7 +106,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
 
   return (
     <div className="add-card-container">
-      <h1>{submitButtonText}</h1>
+      <h2>Edit Card</h2>
 
       {/* Dynamisk förhandsvisning av kort */}
       <Card
@@ -206,14 +206,15 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             <option value="SEB">SEB</option>
             <option value="Handelsbanken">Handelsbanken</option>
             <option value="Nordea">Nordea</option>
-            <option value="Danske Bank">Danske Bank</option>
             <option value="ICA Banken">ICA Banken</option>
           </select>
         </div>
 
         <button type="submit" className="submit-button">{submitButtonText}</button>
       </form>
+      
     </div>
+    
   );
 };
 

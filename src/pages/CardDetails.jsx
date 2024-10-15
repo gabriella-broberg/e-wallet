@@ -37,10 +37,17 @@ const handleSubmitForm = (updatedCardDetails) => {
   };
 
   return (
-    <div>
-      <h1>Edit Card Details</h1>
-      <button disabled={card.isActive} onClick={handleActivate}>Activate Card</button>
-      <button disabled={card.isActive} onClick={handleDelete}>Delete Card</button>
+    <div className="card-details-container">
+
+      {/* Placera knapparna efter kortdetaljerna men före formuläret */}
+      <div className="button-container">
+        <button className="activate-button" disabled={card.isActive} onClick={handleActivate}>
+          Activate Card
+        </button>
+        <button className="delete-button" disabled={card.isActive} onClick={handleDelete}>
+          Delete Card
+        </button>
+      </div>
 
       <CardForm
         initialCardDetails={initialCardDetails}

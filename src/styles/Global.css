@@ -1,77 +1,146 @@
+* {
+    box-sizing: border-box; /* Inkluderar padding och border i elementets storlek */
+}
+
+
+
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    max-width: 100%; /* Sätt till 100% för att ta upp hela skärmens bredd */
-    margin: 0; /* Tar bort marginalerna */
+    font-family: 'Poppins', sans-serif;
+    background-image: url('/src/assets/background.avif');
+    background-size: cover; /* Gör att bilden täcker hela bakgrunden */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: var(--text-color);
+    max-width: 100%;
+    margin: 0; 
     padding: 0;
     display: flex; 
     justify-content: center; /* Centrerar horisontellt */
     align-items: center; /* Centrerar vertikalt */
-    min-height: 100vh; /* Full höjd på skärmen */
-    flex-direction: column; /* För att centrera innehåll i en kolumn */
+    min-height: 100vh; 
+    flex-direction: column; 
+    
 }
 
+a {
+    text-decoration: inherit;
+  }
 
+:root {
+    --background-color: white;
+    --text-color: black;
+  }
+  
+  .app-container {
+    color: var(--text-color);
 
-.home-container {
-    max-width: 400px;
+  }
+  
+  button {
+    background-color: var(--button-background);
+  }
+  
+
+  .home-container {
+    background-color: var(--background-color);
+    max-width: 359px;
+    height: 75vh;
+    overflow-y: auto; 
+    backdrop-filter: blur(10px);
     margin: 0 auto;
     padding: 20px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrerar innehållet horisontellt */
-  justify-content: center; /* Centrerar innehållet vertikalt */
-}
+    align-items: center;
+  }
 
-
-
-.add-card-button {
-    padding: 12px;
-    background-color: #1a1f71;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-    text-align: center; 
-}
-
-.add-card-button:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Global styling för appen */
-.app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Gör att containern alltid täcker hela höjden på skärmen */
-    width: 100%;
-    justify-content: flex-start;
+  .inactive-card {
+    filter: grayscale(80%); 
+    opacity: 0.7; 
+    transition: all 0.3s ease;
   }
   
-  header {
-    background-color: #333;
-    color: white;
+  .inactive-card:hover, .inactive-card:active {
+    filter: none; 
+    opacity: 1;
+    border: 2px solid #333; 
+  }
+  
+  
+  .max-cards-message {
+    margin-top: 20px;
+    color: var(--text-color);
+  }
+  
+  
+/* SETTINGS*/
+
+.settings-container {
+    background-color: var(--background-color);
+    max-width: 400px;
+    height: 30vh;
+    overflow-y: auto; 
+    backdrop-filter: blur(10px); 
+    margin: 0 auto;
     padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  
+  .settings-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100; /* Så att headern alltid syns ovanpå innehållet */
+    color: var(--text-color);
   }
   
-  main {
-    flex-grow: 1; /* Låter innehållet i main fylla upp allt utrymme */
-    padding: 20px;
+  .settings-container label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--text-color);
   }
   
-  footer {
-    background-color: #333;
-    color: white;
+  .settings-container select {
     padding: 10px;
-    text-align: center;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--button-background);
+    color: var(--text-color);
   }
+  
+  .settings-container button {
+    background-color: var(--button-background);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  
+
   
