@@ -1,41 +1,38 @@
 .bottom-menu {
-    background-color: rgba(255, 255, 255, 0.2); /* Lite mer genomskinlig bakgrund */
-    backdrop-filter: blur(10px); /* Mer blur för en glasliknande effekt */
-    padding: 1rem;
-    display: flex;
-    justify-content: center; /* Exakt centrerade ikoner */
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 50%; /* Centrerar menyn horisontellt */
-    transform: translateX(-50%); /* Justerar för exakt mitten */
-    border-radius: 30px; /* Rundar hörnen för en mer modern känsla */
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Liten linje upptill */
-    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3); /* Större skugga för att ge djup */
-    z-index: 1000;
-  }
-  
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9rem; 
+  height: 45px; 
+  border-radius: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
 
-  
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem; /* Storlek på ikoner */
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease; /* Animationer vid hover */
+}
 
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 3rem; /* Storlek på ikoner */
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Animationer vid hover */
-  }
-  
-  nav ul li a:hover {
-    color: #f4f4f9;
-    transform: scale(1.2); /* Liten "zoom" vid hover */
-  }
-  
-  nav ul li a:visited,
-  nav ul li a:focus,
-  nav ul li a:active {
-    color: white;
-  }
-  
+nav ul li a:hover {
+  color: #f4f4f9;
+  transform: scale(1.2); /* Liten "zoom" vid hover */
+}
+
+nav ul li a:visited,
+nav ul li a:focus,
+nav ul li a:active {
+  color: white;
+}

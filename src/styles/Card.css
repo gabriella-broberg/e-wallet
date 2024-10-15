@@ -1,60 +1,59 @@
 .card-container {
-    width: 320px;
-    height: 200px;
-    border-radius: 15px;
-    padding: 20px;
+    width: 16rem; /* 320px -> 15rem */
+    height: 10rem; /* 200px -> 9.38rem */
+    border-radius: 0.7rem; /* 15px -> 0.7rem */
+    padding: 0.94rem; /* 20px -> 0.94rem */
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #1c1f71; /* Exempel för Visa */
-    margin-bottom: 30px;
-    position: relative; /* Behövs för absolut positionering av logotyp och banknamn */
-  }
+    background-color: #1c1f71;
+    margin-bottom: 1.41rem; /* 30px -> 1.41rem */
+    position: relative;
+}
   
-  .card-logo {
+.card-logo {
     position: absolute; 
-    top: 15px; 
-    left: 15px; 
-  }
+    top: 0.7rem; /* 15px -> 0.7rem */
+    left: 0.7rem; /* 15px -> 0.7rem */
+}
   
-  .vendor-logo {
-    width: 50px; 
+.vendor-logo {
+    width: 2.34rem; /* 50px -> 2.34rem */
     height: auto;
-  }
+}
   
-  .card-bank {
+.card-bank {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 0.9rem;
+    top: 0.47rem; /* 10px -> 0.47rem */
+    right: 0.94rem; /* 20px -> 0.94rem */
+    font-size: 0.68rem; /* 0.9rem -> 0.68rem */
     font-weight: bold;
     text-align: right;
-  }
+}
   
-  .card-number {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    margin-top: 50px; /* Skapa utrymme mellan logotypen och kortnumret */
-    position: relative; /* Håller kortnumret i sitt eget flöde */
-  }
+.card-number {
+    font-size: 0.9rem; /* 1.2rem -> 0.9rem */
+    letter-spacing: 0.09rem; /* 2px -> 0.09rem */
+    margin-top: 2.34rem; /* 50px -> 2.34rem */
+    position: relative;
+}
   
-  .card-info {
+.card-info {
     display: flex;
     justify-content: space-between;
-  }
+}
   
-  .card-holder, .card-expiry {
-    font-size: 0.9rem;
-  }
+.card-holder, .card-expiry {
+    font-size: 0.68rem; /* 0.9rem -> 0.68rem */
+}
   
-  .card-expiry {
-    width: 50px;
+.card-expiry {
+    width: 2.34rem; /* 50px -> 2.34rem */
     text-align: right;
-  }
+}
   
-  .card-label {
-    font-size: 0.75rem;
+.card-label {
+    font-size: 0.56rem; /* 0.75rem -> 0.56rem */
     opacity: 0.8;
-  }
-  
+}
