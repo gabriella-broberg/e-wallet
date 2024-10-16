@@ -1,14 +1,14 @@
 .card-container {
-    width: 16rem; /* 320px -> 15rem */
-    height: 10rem; /* 200px -> 9.38rem */
-    border-radius: 0.7rem; /* 15px -> 0.7rem */
-    padding: 0.94rem; /* 20px -> 0.94rem */
+    width: 15rem; 
+    height: 9rem;
+    border-radius: 0.7rem; 
+    padding: 0.94rem; 
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #1c1f71;
-    margin-bottom: 1.41rem; /* 30px -> 1.41rem */
+   margin-top: 1rem;
     position: relative;
 }
   

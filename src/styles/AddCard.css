@@ -67,7 +67,7 @@
 .button-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; /* Skapa utrymme under knapparna, innan formuläret */
+    margin-top: 1rem;
   }
   
   .activate-button, .delete-button {
