@@ -9,16 +9,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: var(--text-color);
-  max-width: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center; /* Centrerar horisontellt */
-  align-items: center; /* Centrerar vertikalt */
   min-height: 100vh;
-  flex-direction: column;
-  overflow: hidden;
-
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
   
 }
 
@@ -31,6 +27,7 @@ a {
 :root {
   --background-color: white;
   --text-color: black;
+  --button-background: #a2a2a2;
 }
 
 button {
@@ -38,10 +35,10 @@ button {
 }
 
 .home-container {
-  width: 20rem;
+  max-width: 100%;
   overflow-y: auto;
   backdrop-filter: blur(10px);
-  height: 80vh;
+  max-height: 80vh;
   margin: 0 auto;
   padding: 10px;
   border-radius: 20px;
@@ -51,7 +48,8 @@ button {
 }
 
 .card-details-container {
-  height: 80vh;
+  max-height: 80vh;
+  max-width: 100%;
   overflow-y: auto;
   backdrop-filter: blur(10px);
   margin: 0 auto;
@@ -64,8 +62,9 @@ button {
 }
 
 .add-card-container {
-  width: 20rem;
-  height: 80vh;
+    max-width: 100%;
+    width: 20rem;
+  max-height: 80vh;
   overflow-y: auto;
   border-radius: 20px;
   display: flex;
@@ -79,8 +78,9 @@ button {
   color: var(--text-color);
   background-color: var(--background-color);
   width: 20rem;
-  height: 80vh;
+  max-height: 80vh;
   border-radius: 20px;
+  
   
 }
 
