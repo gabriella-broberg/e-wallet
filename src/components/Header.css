@@ -24,7 +24,7 @@
     font-family:monospace;
     font-size: 1rem;
     font-weight: bold;
-    color: var(--button-background); 
+    color: #fff; 
     text-align: left;
     flex-grow: 1; /* Detta centrerar logon */
   }
@@ -41,14 +41,14 @@
   }
   
   .nav-links li a {
-    color: var(--button-background);
+    color: #fff;
     text-decoration: none;
     display: flex;
     align-items: center;
   }
   
   .nav-links li a:hover {
-    color: #f4f4f9; /* Ljusare färg vid hover */
+    color: var(--button-background); /* Ljusare färg vid hover */
   }
   
 
@@ -73,7 +73,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f4f4f9; /* Ljusare vit på hover */
+    color: var(--button-background); /* Ljusare vit på hover */
 }
 
 

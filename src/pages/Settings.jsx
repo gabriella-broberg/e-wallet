@@ -33,8 +33,8 @@ const Settings = () => {
       <div>
         <label>Theme: </label>
         <select value={theme} onChange={handleThemeChange}>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
+          <option value="light">Pink</option>
+          <option value="dark">Blue</option>
           <option value="green">Green</option>
         </select>
       </div>

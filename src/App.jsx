@@ -18,8 +18,8 @@ const App = () => {
 
     if (theme === 'dark') {
       root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
-      root.style.setProperty('--text-color', '#fff');
-      root.style.setProperty('--button-background', '#555');
+      root.style.setProperty('--text-color', '#cdcdcd');
+      root.style.setProperty('--button-background', '#1a1f71');
     } else if (theme === 'green') {
       root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
       root.style.setProperty('--text-color', '#fff');
@@ -27,7 +27,7 @@ const App = () => {
     } else {
       root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
       root.style.setProperty('--text-color', '#fff');
-      root.style.setProperty('--button-background', '#1a1f71');
+      root.style.setProperty('--button-background', 'hotpink');
     }
     
   }, [theme]);
