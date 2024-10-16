@@ -10,6 +10,7 @@ body {
   background-size: cover; /* Gör att bilden täcker hela bakgrunden */
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -81,6 +82,7 @@ button {
   width: 20rem;
   max-height: 85vh;
   border-radius: 20px;
+  margin: 170px 0px 160px 0px;
   
   
 }
