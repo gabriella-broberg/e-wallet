@@ -4,7 +4,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url("/src/assets/background.avif");
+  background: repeating-linear-gradient(45deg, var(--button-background), #606dbc 10px, #465298 10px, #465298 20px);
+
+
   background-size: cover; /* Gör att bilden täcker hela bakgrunden */
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +40,7 @@ button {
 .home-container {
   max-width: 100%;
   overflow-y: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   max-height: 85vh;
   margin: 0 auto;
   padding: 10px;
@@ -52,7 +54,7 @@ button {
   max-height: 85vh;
   max-width: 100%;
   overflow-y: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   margin: 0 auto;
   border-radius: 20px;
   display: flex;
@@ -106,9 +108,8 @@ button {
 .settings-container {
   background-color: var(--background-color);
   max-width: 25rem;
-  height: 80vh;
   overflow-y: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   margin: 0 auto;
   padding: 20px;
   border-radius: 20px;

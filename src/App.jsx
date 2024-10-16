@@ -17,15 +17,15 @@ const App = () => {
     const root = document.documentElement;
 
     if (theme === 'dark') {
-      root.style.setProperty('--background-color', 'rgba(51, 51, 51, 0.4)'); 
+      root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
       root.style.setProperty('--text-color', '#fff');
       root.style.setProperty('--button-background', '#555');
     } else if (theme === 'green') {
-      root.style.setProperty('--background-color', 'rgba(44, 95, 45, 0.4)'); 
+      root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
       root.style.setProperty('--text-color', '#fff');
-      root.style.setProperty('--button-background', '#3d9970');
+      root.style.setProperty('--button-background', '#00b09b');
     } else {
-      root.style.setProperty('--background-color', 'rgba(244, 244, 249, 0.2)'); 
+      root.style.setProperty('--background-color', 'rgba(255, 255, 255, 0.2)'); 
       root.style.setProperty('--text-color', '#fff');
       root.style.setProperty('--button-background', '#1a1f71');
     }
