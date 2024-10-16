@@ -8,6 +8,7 @@ body {
   background-size: cover; /* Gör att bilden täcker hela bakgrunden */
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -38,7 +39,7 @@ button {
   max-width: 100%;
   overflow-y: auto;
   backdrop-filter: blur(10px);
-  max-height: 80vh;
+  max-height: 71vh;
   margin: 0 auto;
   padding: 10px;
   border-radius: 20px;
@@ -48,7 +49,7 @@ button {
 }
 
 .card-details-container {
-  max-height: 80vh;
+  max-height: 71vh;
   max-width: 100%;
   overflow-y: auto;
   backdrop-filter: blur(10px);
@@ -64,7 +65,7 @@ button {
 .add-card-container {
     max-width: 100%;
     width: 20rem;
-  max-height: 80vh;
+  max-height: 71vh;
   overflow-y: auto;
   border-radius: 20px;
   display: flex;
@@ -78,7 +79,7 @@ button {
   color: var(--text-color);
   background-color: var(--background-color);
   width: 20rem;
-  max-height: 80vh;
+  max-height: 71vh;
   border-radius: 20px;
   
   
