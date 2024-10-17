@@ -6,8 +6,8 @@ import amexLogo from '../assets/amex.svg';
 
 const Card = ({ cardNumber, cardHolder, validThru, vendor, bank }) => {
   const maskedCardNumber = cardNumber
-    ? '**** **** **** ' + cardNumber.slice(-4)
-    : '**** **** **** ****';
+  ? '**** **** ' + cardNumber.slice(-9)
+  : '**** **** **** ****';
 
   // Dela upp validThru i månad och år
   const [expireMonth, expireYear] = validThru ? validThru.split('/') : ['MM', 'YY'];
@@ -21,7 +21,7 @@ const bankStyles = {
       backgroundImage: 'linear-gradient(135deg, #27496d, #142850)', // Mörkblå gradient
     },
     Handelsbanken: {
-      backgroundImage: 'linear-gradient(135deg, #005c97, #00274d)', // Djupare blå toner
+      backgroundImage: 'linear-gradient(135deg, #695c97, #69274d)', // Djupare blå toner
     },
     Swedbank: {
       backgroundImage: 'linear-gradient(135deg, #f2994a, #f2c94c)', // Gradient från orange till guld

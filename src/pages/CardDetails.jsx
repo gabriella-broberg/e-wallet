@@ -19,33 +19,35 @@ const CardDetails = () => {
     bank: card?.bank || 'Swedbank',
   };
 
-const handleSubmitForm = (updatedCardDetails) => {
-  console.log("Submitting updated card details:", updatedCardDetails.validThru); // Kontrollera validThru-värdet
-  dispatch(updateCard({ ...updatedCardDetails, id }));
-  navigate('/');
-};
-
+  const handleSubmitForm = (updatedCardDetails) => {
+    console.log("Submitting updated card details:", updatedCardDetails.validThru); // Kontrollera validThru-värdet
+    dispatch(updateCard({ ...updatedCardDetails, id }));
+    navigate('/');
+  };
 
   const handleActivate = () => {
-    dispatch(activateCard(id));
-    navigate('/');  // Gå tillbaka till startsidan efter aktivering
+    if (window.confirm('You are activating this card. ')) {
+      dispatch(activateCard(id));
+      navigate('/');  // Gå tillbaka till startsidan efter aktivering
+    }
   };
 
   const handleDelete = () => {
-    dispatch(deleteCard(id));
-    navigate('/');
+    if (window.confirm('Are you sure you want to delete this card?')) {
+      dispatch(deleteCard(id));
+      navigate('/');
+    }
   };
 
   return (
     <div className="card-details-container">
-
       {/* Placera knapparna efter kortdetaljerna men före formuläret */}
       <div className="button-container">
         <button className="activate-button" disabled={card.isActive} onClick={handleActivate}>
-          Activate Card
+          Activate
         </button>
         <button className="delete-button" disabled={card.isActive} onClick={handleDelete}>
-          Delete Card
+          Delete
         </button>
       </div>
 
