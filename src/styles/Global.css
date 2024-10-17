@@ -9,7 +9,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +91,8 @@ button {
 .add-card-container {
     max-width: 100%;
     width: 20rem;
-  max-height: 85vh;
+  height: 85vh;
+  overflow-y: auto; /* Lägg till scroll när innehållet överstiger höjden */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
