@@ -1,168 +1,171 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(45deg, #a1c4fd, var(--button-background));
-      background-size: 100% 100%;
-      background-attachment: fixed;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-    
-   
-     /* Animerad cirkel */
-     .moving-shape {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background-color: rgba(107, 131, 255, 0.7); /* Ljus lila färg med transparens */
-      border-radius: 50%; /* Gör den till en cirkel */
-      animation: floatAround 15s ease-in-out infinite;
-    }
-    
-    @keyframes floatAround {
-      0% {
-        transform: translate(0, 0); /* Startar i mitten */
-      }
-      25% {
-        transform: translate(15vw, 15); /* Flyttar sig lite åt höger och nedåt */
-      }
-      50% {
-        transform: translate(15vw, -15vh); /* Rör sig uppåt */
-      }
-      75% {
-        transform: translate(-15vw, -15vh); /* Flyttar sig lite åt vänster och uppåt */
-      }
-      100% {
-        transform: translate(0, 0); /* Tillbaka till mitten */
-      }
-  }
-  
-    
-    
-  
-  
-  a {
-    text-decoration: inherit;
-  }
-  
-  :root {
-    --background-color: white;
-    --text-color: black;
-    --button-background: #a2a2a2;
-  }
-  
-  button {
-    background-color: var(--button-background);
-  }
-  
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #a1c4fd, var(--button-background));
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
-.container {
-    background-color: ;
-    width: 20rem;
-    max-height: 80vh;
-    margin: 0 auto;
+/* Animerad cirkel */
+.moving-shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(
+    107,
+    131,
+    255,
+    0.7
+  ); /* Ljus lila färg med transparens */
+  border-radius: 50%; /* Gör den till en cirkel */
+  animation: floatAround 15s ease-in-out infinite;
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0); /* Startar i mitten */
+  }
+  25% {
+    transform: translate(15vw, 15); /* Flyttar sig lite åt höger och nedåt */
+  }
+  50% {
+    transform: translate(15vw, -15vh); /* Rör sig uppåt */
+  }
+  75% {
+    transform: translate(
+      -15vw,
+      -15vh
+    ); /* Flyttar sig lite åt vänster och uppåt */
+  }
+  100% {
+    transform: translate(0, 0); /* Tillbaka till mitten */
+  }
+}
+
+a {
+  text-decoration: inherit;
+}
+
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-background: #a2a2a2;
+}
+
+button {
+  background-color: var(--button-background);
+}
+
+.app-container {
+    position: fixed; /* Fixerar containern på skärmen */
+    top: 50%; /* Centrera vertikalt */
+    left: 50%; /* Centrera horisontellt */
+    transform: translate(-50%, -50%); /* Justera så att den centreras korrekt */
+    width: 90%; /* Anpassar bredden för att vara responsiv */
+    max-width: 20rem; /* Maximal bredd */
+    max-height: 83vh; /* Höjdbegränsning */
+    overflow-y: auto; /* Scrollbar för innehållet */
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    justify-content: center;
     background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); 
-    border-radius: 20px; 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    padding: 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-
-  /* Specifika skillnader per komponent */
+/* Specifika skillnader per komponent */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .card-details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .add-card-container {
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  
-  
-  .inactive-card {
-    filter: grayscale(80%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-  }
-  
-  .inactive-card:hover,
-  .inactive-card:active {
-    filter: none;
-    opacity: 1;
-    border: 2px solid #333;
-  }
-  
-  .max-cards-message {
-    margin-top: 20px;
-    color: var(--text-color);
-  }
-  
-  /* SETTINGS*/
-  
+.card-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  
-  .settings-container h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: var(--text-color);
-  }
-  
-  .settings-container label {
-    font-size: 1.2rem;
-    margin-right: 10px;
-    color: var(--text-color);
-  }
-  
-  .settings-container select {
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: var(--button-background);
-    color: var(--text-color);
-  }
-  
-  .settings-container button {
-    background-color: var(--button-background);
-    color: var(--text-color);
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .settings-container button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+.add-card-container {
+  justify-content: center;
+}
 
+.inactive-card {
+  filter: grayscale(80%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.inactive-card:hover,
+.inactive-card:active {
+  filter: none;
+  opacity: 1;
+  border: 2px solid #333;
+}
+
+.max-cards-message {
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+/* SETTINGS*/
+
+.settings-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.settings-container label {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: var(--text-color);
+}
+
+.settings-container select {
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--button-background);
+  color: var(--text-color);
+}
+
+.settings-container button {
+  background-color: var(--button-background);
+  color: var(--text-color);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.settings-container button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+@media (max-width: 768px) {
+    .app-container {
+      width: 95%; /* Anpassar bredden för mindre skärmar */
+      max-height: 80vh; /* Justerar höjden för att undvika att den växer utanför */
+    }
+  }
