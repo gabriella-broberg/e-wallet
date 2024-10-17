@@ -5,7 +5,7 @@
 body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(45deg, #a1c4fd, var(--button-background));
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -73,6 +73,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden; /* Förhindrar horisontell scroll */
+
 }
 
 .card-details-container {
@@ -90,7 +92,6 @@ button {
 
 .add-card-container {
     max-width: 100%;
-    width: 20rem;
   height: 85vh;
   overflow-y: auto; /* Lägg till scroll när innehållet överstiger höjden */
   border-radius: 20px;

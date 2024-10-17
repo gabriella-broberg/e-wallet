@@ -1,21 +1,23 @@
 .bottom-menu {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 9rem; 
-  height: 40px; 
-  border-radius: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Justera till procent för att vara mer flexibel */
+    max-width: 9rem; /* Behåll maxbredd */
+    height: 40px;
+    border-radius: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
 
 nav ul li a {
   color: white;
