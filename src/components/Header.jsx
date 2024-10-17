@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <nav className="nav-container">
+        
         <div className="logo">ewa11et.</div> 
         <ul className="nav-links">
 

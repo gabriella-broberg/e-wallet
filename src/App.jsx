@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './styles/Global.css';
 import BottomMenu from './components/BottomMenu';
+import Info from './pages/Info';
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/addcard" element={<AddCard />} />
             <Route path="/card/:id" element={<CardDetails />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/Info" element={<Info />} />
           </Routes>
           <BottomMenu/>
         </main>
