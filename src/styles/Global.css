@@ -6,7 +6,6 @@ body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(45deg, #a1c4fd, var(--button-background));
     background-size: 100% 100%;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     height: 100vh;
