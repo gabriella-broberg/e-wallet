@@ -9,7 +9,7 @@
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 9rem; /* Behåll maxbredd */
+    width: 180px; 
     height: 40px;
     border-radius: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);

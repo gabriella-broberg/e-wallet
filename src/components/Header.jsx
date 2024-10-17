@@ -7,13 +7,13 @@ const Header = () => {
   return (
     <header className="app-header">
       <nav className="nav-container">
-        <div className="logo">e wallet.</div> 
+        <div className="logo">ewa11et.</div> 
         <ul className="nav-links">
 
 
           <li>
             <Link to="/info">
-              <FaInfoCircle size={24} /> 
+              <FaInfoCircle size={28} /> 
             </Link>
           </li>
         </ul>
