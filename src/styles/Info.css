@@ -8,7 +8,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mjuk skugga för att skapa djup */
     text-align: left;
-    z-index: 1;
+    position: relative; /* Lägg till för att z-index ska fungera */
+    z-index: 1; /* Se till att den ligger över den flytande cirkeln */
+  }
  
   
   h1 {
@@ -33,4 +35,3 @@
   a:hover {
     text-decoration: underline;
   }
-}
