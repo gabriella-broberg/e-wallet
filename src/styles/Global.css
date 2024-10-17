@@ -27,7 +27,6 @@
     background-color: rgba(107, 131, 255, 0.7); /* Ljus lila färg med transparens */
     border-radius: 50%; /* Gör den till en cirkel */
     animation: floatAround 15s ease-in-out infinite;
-    z-index: -1;
   }
   
   @keyframes floatAround {
