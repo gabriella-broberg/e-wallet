@@ -10,7 +10,6 @@ import './styles/Global.css';
 import BottomMenu from './components/BottomMenu';
 import Info from './pages/Info';
 
-
 const App = () => {
   const theme = useSelector((state) => state.theme);
 
@@ -34,22 +33,19 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className="app-container">
-      <Router>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/addcard" element={<AddCard />} />
-            <Route path="/card/:id" element={<CardDetails />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/Info" element={<Info />} />
-          </Routes>
-          <BottomMenu/>
-        </main>
-     
-      </Router>
-    </div>
+    <Router>
+      <Header /> 
+      <main className="app-container container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/addcard" element={<AddCard />} />
+          <Route path="/card/:id" element={<CardDetails />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/info" element={<Info />} />
+        </Routes>
+      </main>
+      <BottomMenu /> 
+    </Router>
   );
 };
 

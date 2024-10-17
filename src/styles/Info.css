@@ -4,12 +4,13 @@
   .info-container {
     max-width: 800px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Lätt transparens för att hålla det luftigt */
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(5px);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mjuk skugga för att skapa djup */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-    position: relative; /* Lägg till för att z-index ska fungera */
-    z-index: 1; /* Se till att den ligger över den flytande cirkeln */
+    position: relative; 
+    z-index: 1; 
   }
  
   
@@ -33,5 +34,5 @@
   }
   
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
