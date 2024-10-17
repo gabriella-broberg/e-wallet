@@ -38,14 +38,14 @@ body {
     transform: translate(0, 0); /* Startar i mitten */
   }
   25% {
-    transform: translate(15vw, 15); /* Flyttar sig lite åt höger och nedåt */
+    transform: translate(25vw, 15); /* Flyttar sig lite åt höger och nedåt */
   }
   50% {
-    transform: translate(15vw, -15vh); /* Rör sig uppåt */
+    transform: translate(25vw, -15vh); /* Rör sig uppåt */
   }
   75% {
     transform: translate(
-      -15vw,
+      -25vw,
       -15vh
     ); /* Flyttar sig lite åt vänster och uppåt */
   }
