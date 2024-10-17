@@ -5,7 +5,8 @@
 body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(45deg, #a1c4fd, var(--button-background));
-  
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -105,6 +106,7 @@ button {
   width: 20rem;
   max-height: 85vh;
   border-radius: 20px;
+  overflow-y: auto;
   
   
 }

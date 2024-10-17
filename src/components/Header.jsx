@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <nav className="nav-container">
-        <div className="logo">€-wallet</div> 
+        <div className="logo">e wallet.</div> 
         <ul className="nav-links">
 
 
