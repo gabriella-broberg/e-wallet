@@ -9,7 +9,6 @@
     right: 0;
     width: 100%;
     height: 60px; /* Sätt en fast höjd om den blir för stor */
-    z-index: 1000;
   }
   
 

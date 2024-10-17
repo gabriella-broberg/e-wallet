@@ -9,13 +9,11 @@
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; /* Justera till procent för att vara mer flexibel */
     max-width: 9rem; /* Behåll maxbredd */
     height: 40px;
     border-radius: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
   }
   
 
