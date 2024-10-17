@@ -7,6 +7,7 @@
       background: linear-gradient(45deg, #a1c4fd, var(--button-background));
       background-size: 100% 100%;
       background-attachment: fixed;
+      color: #fff;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -66,59 +67,45 @@
   
 
 
-  
-  .home-container {
-    max-width: 100%;
-    backdrop-filter: blur(10px);
-    max-height: 80vh;
+.container {
+    background-color: ;
+    width: 20rem;
+    height: 85vh;
     margin: 0 auto;
     padding: 10px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: auto;
-
+    overflow-y: auto;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+  }
   
+
+  /* Specifika skillnader per komponent */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .card-details-container {
-    max-height: 80vh;
-    max-width: 100%;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-    margin: 0 auto;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
   }
   
   .add-card-container {
-      max-width: 100%;
-    height: 80vh;
-    overflow-y: auto; /* Lägg till scroll när innehållet överstiger höjden */
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    
   }
   
-  .app-container {
-    color: var(--text-color);
-    background-color: var(--background-color);
-    width: 20rem;
-    max-height: 80vh;
-    border-radius: 20px;
-    overflow-y: auto;
-    z-index: 1;
 
-    
-    
-  }
+  
   
   .inactive-card {
     filter: grayscale(80%);
@@ -140,18 +127,7 @@
   
   /* SETTINGS*/
   
-  .settings-container {
-    background-color: var(--background-color);
-    max-width: 25rem;
-    overflow-y: auto;
-    backdrop-filter: blur(5px);
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   
   .settings-container h1 {
     font-size: 1.5rem;
