@@ -166,10 +166,10 @@ button {
 
 @media (max-width: 500px) {
     .app-container {
-      max-height: 70vh; 
+      max-height: 75vh; 
     }
 
     .home-container {
-        max-height: 70vh;
+        max-height: 75vh;
       }
   }

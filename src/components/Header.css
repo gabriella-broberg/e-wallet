@@ -27,6 +27,7 @@
     color: #fff; 
     text-align: left;
     flex-grow: 1; /* Detta centrerar logon */
+    margin-left: 15px;
   }
   
   .nav-links {
