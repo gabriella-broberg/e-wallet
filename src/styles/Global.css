@@ -75,7 +75,8 @@ button {
     transform: translate(-50%, -50%); /* Justera så att den centreras korrekt */
     width: 90%; /* Anpassar bredden för att vara responsiv */
     max-width: 20rem; /* Maximal bredd */
-    max-height: 83vh; /* Höjdbegränsning */
+    max-height: 85vh; /* Höjdbegränsning */
+    min-height: 33vh;
     overflow-y: auto; /* Scrollbar för innehållet */
     padding: 10px;
     display: flex;

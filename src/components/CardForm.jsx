@@ -1,13 +1,21 @@
 import { useState } from 'react';
 import Card from '../components/Card';
 import '../styles/AddCard.css';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';  // Importera PropTypes
+
 
 const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) => {
   const [cardDetails, setCardDetails] = useState(initialCardDetails);
+  const [errors, setErrors] = useState({
+    cardHolder: '',
+    cardNumber: '',
+    validThru: '',
+    ccv: ''
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const newErrors = { ...errors };
 
     if (name === 'cardNumber') {
       const formattedCardNumber = value
@@ -16,6 +24,13 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
         .replace(/(.{4})/g, '$1 ')
         .trim();
 
+      if (value.replace(/\s/g, '').match(/\D/g)) {
+        newErrors.cardNumber = 'Only numbers are allowed for the card number.';
+      } else {
+        newErrors.cardNumber = '';
+      }
+
+      setErrors(newErrors);
       setCardDetails({ ...cardDetails, [name]: formattedCardNumber });
       return;
     }
@@ -36,67 +51,80 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
         formattedValidThru = formattedValidThru.slice(0, 4).replace(/(\d{2})(\d{2})/, '$1/$2');
       }
 
+      const currentDate = new Date();
+      const currentMonth = currentDate.getMonth() + 1;
+      const currentYear = currentDate.getFullYear() % 100;
+
+      const expiryMonth = parseInt(formattedValidThru.slice(0, 2), 10);
+      const expiryYear = parseInt(formattedValidThru.slice(3, 5), 10);
+
+      if (expiryYear < currentYear || (expiryYear === currentYear && expiryMonth < currentMonth)) {
+        newErrors.validThru = 'The expiration date cannot be a date that has already passed.';
+      } else {
+        newErrors.validThru = '';
+      }
+
+      setErrors(newErrors);
       setCardDetails({ ...cardDetails, [name]: formattedValidThru });
       return;
     }
 
     if (name === 'ccv') {
       const formattedCCV = value.replace(/\D/g, '').slice(0, 3);
+
+      if (value.match(/\D/g)) {
+        newErrors.ccv = 'Only numbers are allowed for the CCV.';
+      } else {
+        newErrors.ccv = '';
+      }
+
+      setErrors(newErrors);
       setCardDetails({ ...cardDetails, [name]: formattedCCV });
       return;
     }
 
     if (name === 'cardHolder') {
       const formattedCardHolder = value.replace(/[^a-zA-Z\s]/g, '');
+      if (value.match(/[^a-zA-Z\s]/g)) {
+        newErrors.cardHolder = 'Only letters are allowed for the cardholder´s name.';
+      } else {
+        newErrors.cardHolder = '';
+      }
+      setErrors(newErrors);
       setCardDetails({ ...cardDetails, [name]: formattedCardHolder });
       return;
     }
 
+    setErrors(newErrors);
     setCardDetails({ ...cardDetails, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cleanedCardNumber = cardDetails.cardNumber.replace(/\s/g, '');
 
-    if (cleanedCardNumber.length !== 16) {
-      alert('The card number must be exactly 16 digits.');
-      return;
+    // Ta bort alla mellanslag och kontrollera att det finns 16 siffror
+    const strippedCardNumber = cardDetails.cardNumber.replace(/\s/g, '');
+
+    if (strippedCardNumber.length !== 16) {
+        alert("Ange kortnummer med 16 siffror.");
+        return; // Avbryt formulärinlämningen om det inte är 16 siffror
     }
 
-    const currentDate = new Date();
-    const currentMonth = currentDate.getMonth() + 1;
-    const currentYear = currentDate.getFullYear() % 100;
-    const expiryMonth = parseInt(cardDetails.validThru.slice(0, 2), 10);
-    const expiryYear = parseInt(cardDetails.validThru.slice(3, 5), 10);
-
-    if (
-      isNaN(expiryMonth) ||
-      isNaN(expiryYear) ||
-      expiryYear < currentYear ||
-      (expiryYear === currentYear && expiryMonth < currentMonth)
-    ) {
-      alert('The expiration date is invalid or has already passed.');
-      return;
-    }
-
-    if (cardDetails.ccv.length !== 3) {
-      alert('The CCV must be exactly 3 digits.');
-      return;
-    }
-
-    handleSubmitForm(cardDetails);
-  };
+    handleSubmitForm(cardDetails);  // Callback till föräldrakomponenten
+};
 
   return (
     <div className="card-details-container">
+
+      {/* Dynamisk förhandsvisning av kort */}
       <Card
-        cardNumber={cardDetails.cardNumber}
-        cardHolder={cardDetails.cardHolder}
-        validThru={cardDetails.validThru}
-        vendor={cardDetails.vendor}
-        bank={cardDetails.bank}
-      />
+  cardNumber={cardDetails.cardNumber}
+  cardHolder={cardDetails.cardHolder}
+  validThru={cardDetails.validThru}  // Skicka hela validThru
+  vendor={cardDetails.vendor}
+  bank={cardDetails.bank}
+/>
+
 
       <form onSubmit={handleSubmit} className="add-card-form">
         <div className="form-group">
@@ -111,6 +139,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             maxLength="19"
             required
           />
+          {errors.cardNumber && <p className="error-message">{errors.cardNumber}</p>}
         </div>
 
         <div className="form-group">
@@ -124,6 +153,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             placeholder="Name Lastname"
             required
           />
+          {errors.cardHolder && <p className="error-message">{errors.cardHolder}</p>}
         </div>
 
         <div className="form-group small-group">
@@ -138,6 +168,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             maxLength="5"
             required
           />
+          {errors.validThru && <p className="error-message">{errors.validThru}</p>}
         </div>
 
         <div className="form-group small-group">
@@ -152,6 +183,7 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
             maxLength="3"
             required
           />
+          {errors.ccv && <p className="error-message">{errors.ccv}</p>}
         </div>
 
         <div className="form-group">
@@ -188,22 +220,25 @@ const CardForm = ({ initialCardDetails, submitButtonText, handleSubmitForm }) =>
 
         <button type="submit" className="submit-button">{submitButtonText}</button>
       </form>
+      
     </div>
+    
   );
 };
 
-// PropTypes validation
+
+// Lägg till PropTypes-validering för props
 CardForm.propTypes = {
-  initialCardDetails: PropTypes.shape({
-    cardNumber: PropTypes.string.isRequired,
-    cardHolder: PropTypes.string.isRequired,
-    validThru: PropTypes.string.isRequired,
-    ccv: PropTypes.string.isRequired,
-    vendor: PropTypes.string.isRequired,
-    bank: PropTypes.string.isRequired,
-  }).isRequired,
-  submitButtonText: PropTypes.string.isRequired,
-  handleSubmitForm: PropTypes.func.isRequired,
-};
+    initialCardDetails: PropTypes.shape({
+      cardNumber: PropTypes.string.isRequired,
+      cardHolder: PropTypes.string.isRequired,
+      validThru: PropTypes.string.isRequired,
+      ccv: PropTypes.string.isRequired,
+      vendor: PropTypes.string.isRequired,
+      bank: PropTypes.string.isRequired,
+    }).isRequired,
+    submitButtonText: PropTypes.string.isRequired,
+    handleSubmitForm: PropTypes.func.isRequired,
+  };
 
 export default CardForm;
