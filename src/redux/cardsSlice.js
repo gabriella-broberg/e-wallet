@@ -10,7 +10,7 @@ const initialState = {
       cardHolder: 'John Doe',
       validThru: '12/25',
       vendor: 'visa',
-      bank: 'Nordea',
+      bank: 'Swedbank',
       isActive: true,
     },
     
